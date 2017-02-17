@@ -1,0 +1,36 @@
+{
+  "name": "git-getter",
+  "version": "0.9.0",
+  "description": "A utility to get all repositories for a specific user/organization",
+  "bin": "bin/index.js",
+  "scripts": {
+    "install": "node installer.js",
+    "postinstall": "gulp",
+    "develop": "gulp develop"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/myTerminal/git-getter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/myTerminal/git-getter/issues"
+  },
+  "homepage": "https://github.com/myTerminal/git-getter#readme",
+  "keywords": [
+    "git"
+  ],
+  "author": "Mohammed Ismail Ansari <team.terminal@gmail.com>",
+  "license": "GPL-3.0",
+  "preferGlobal": "true",
+  "dependencies": {
+    "bluebird": "^3.4.7",
+    "faded-progressbar": "^0.9.1",
+    "github": "^8.2.1",
+    "package-script": "0.0.8"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-uglify": "^2.0.1",
+    "gulp-watch": "^4.3.11"
+  }
+}
