@@ -4,7 +4,8 @@
   "description": "A utility to get all repositories for a specific user/organization",
   "bin": "bin/index.js",
   "scripts": {
-    "install": "node installer.js",
+    "install-globals": "npm install -g gulp-cli",
+    "install": "npm run install-globals",
     "develop": "gulp develop"
   },
   "repository": {
@@ -24,8 +25,7 @@
   "dependencies": {
     "bluebird": "^3.4.7",
     "faded-progressbar": "^0.9.1",
-    "github": "^8.2.1",
-    "package-script": "0.0.8"
+    "github": "^8.2.1"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
