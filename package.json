@@ -1,11 +1,10 @@
 {
   "name": "git-getter",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "description": "A utility to get all repositories for a specific user/organization",
   "bin": "bin/index.js",
   "scripts": {
     "install-globals": "npm install -g gulp-cli",
-    "install": "npm run install-globals",
     "develop": "gulp develop"
   },
   "repository": {
