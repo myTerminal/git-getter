@@ -35,9 +35,9 @@ will download all the repositories owned by the user *myTerminal* on GitHub at t
 
 ## Dependencies
 
-* github
-* bluebird
-* faded-progressbar
+* [github](https://www.npmjs.com/package/github)
+* [bluebird](https://www.npmjs.com/package/bluebird)
+* [faded-progressbar](https://www.npmjs.com/package/faded-progressbar)
 
 ## To-do
 
