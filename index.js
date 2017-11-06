@@ -16,8 +16,8 @@ var execSync = require("child_process").execSync,
         followRedirects: false,
         timeout: 5000
     }),
-    arguments = process.argv,
-    username = arguments[2];
+    args = process.argv,
+    username = args[2];
 
 github.repos.getForUser({
     username: username,

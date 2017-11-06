@@ -1,11 +1,15 @@
 /* global require */
 
 var gulp = require('gulp'),
-    watchNow = require ('gulp-watch-now'),
-    uglify = require('gulp-uglify');
+    babel = require('gulp-babel'),
+    uglify = require('gulp-uglify'),
+    watchNow = require ('gulp-watch-now');
 
 gulp.task('scripts', function () {
     return gulp.src('index.js')
+        .pipe(babel({
+            presets: ['env']
+        }))
         .pipe(uglify())
         .pipe(gulp.dest('bin'));
 });
