@@ -19,24 +19,25 @@ var execSync = require("child_process").execSync,
     args = process.argv,
     username = args[2];
 
-github.repos.getForUser({
-    username: username,
-    type: "owner"
-}, function(err, res) {
-    var sourceRepos = res.filter(function (r) {
-        return !r.fork;
-    }).slice(0, 3);
+github.repos.getForUser(
+    {
+        username: username,
+        type: "owner"
+    },
+    function(err, res) {
+        var sourceRepos = res.data.filter(r => !r.fork),
+            downloadProcess;
 
-    console.log("" + sourceRepos.length + " repositories found");
+        console.log("" + sourceRepos.length + " repositories found");
 
-    var downloadProcess = fadedProgressbar.newProcess("Downloading repositories", sourceRepos.length);
+        downloadProcess = fadedProgressbar.newProcess("Downloading repositories", sourceRepos.length);
+        downloadProcess.start();
 
-    downloadProcess.start();
-    
-    sourceRepos.forEach(function (r, i) {
-        execSync("git clone " + r.clone_url, {
-            stdio: [0, 1, 2]
+        sourceRepos.forEach((r, i) => {
+            execSync("git clone " + r.clone_url, {
+                stdio: [0, 1, 2]
+            });
+            downloadProcess.updateProgress(i + 1);
         });
-        downloadProcess.updateProgress(i + 1);
-    });
-});
+    }
+);
