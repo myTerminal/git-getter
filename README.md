@@ -4,7 +4,6 @@
 [![npm downloads](https://img.shields.io/npm/dt/git-getter.svg)](https://www.npmjs.com/package/git-getter)  
 [![Build Status](https://travis-ci.org/myTerminal/git-getter.svg?branch=master)](https://travis-ci.org/myTerminal/git-getter)
 [![Code Climate](https://codeclimate.com/github/myTerminal/git-getter.png)](https://codeclimate.com/github/myTerminal/git-getter)
-[![Package Quality](http://npm.packagequality.com/shield/git-getter.svg)](http://packagequality.com/#?package=git-getter)
 [![Coverage Status](https://img.shields.io/coveralls/myTerminal/git-getter.svg)](https://coveralls.io/r/myTerminal/git-getter?branch=master)
 [![bitHound Overall Score](https://www.bithound.io/github/myTerminal/git-getter/badges/score.svg)](https://www.bithound.io/github/myTerminal/git-getter)
 [![bitHound Code](https://www.bithound.io/github/myTerminal/git-getter/badges/code.svg)](https://www.bithound.io/github/myTerminal/git-getter)  
