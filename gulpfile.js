@@ -7,9 +7,7 @@ var gulp = require('gulp'),
 
 gulp.task('scripts', function () {
     return gulp.src('index.js')
-        .pipe(babel({
-            presets: ['env']
-        }))
+        .pipe(babel())
         .pipe(uglify())
         .pipe(gulp.dest('bin'));
 });
