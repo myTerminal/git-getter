@@ -8,7 +8,7 @@
 [![Dependency Status](https://david-dm.org/myTerminal/git-getter.svg)](https://david-dm.org/myTerminal/git-getter)
 [![devDependency Status](https://david-dm.org/myTerminal/git-getter/dev-status.svg)](https://david-dm.org/myTerminal/git-getter#info=devDependencies)
 [![peer Dependency Status](https://david-dm.org/myTerminal/git-getter/peer-status.svg)](https://david-dm.org/myTerminal/git-getter#info=peerDependencies)  
-[![License](https://img.shields.io/badge/LICENSE-GPL%20v3.0-blue.svg)](https://www.gnu.org/licenses/gpl.html)  
+[![License](https://img.shields.io/github/license/myTerminal/ample-alerts.svg)](https://opensource.org/licenses/MIT)  
 [![NPM](https://nodei.co/npm/git-getter.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/git-getter/)
 
 A utility to get all repositories for a specific user/organization
