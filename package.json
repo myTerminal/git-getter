@@ -19,7 +19,7 @@
     "git"
   ],
   "author": "Mohammed Ismail Ansari <team.terminal@gmail.com>",
-  "license": "GPL-3.0",
+  "license": "MIT",
   "preferGlobal": "true",
   "dependencies": {
     "bluebird": "3.5.0",
