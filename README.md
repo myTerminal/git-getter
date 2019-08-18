@@ -29,12 +29,6 @@ For example, running
 
 will download all the repositories owned by the user *myTerminal* on GitHub at the current path.
 
-## Dependencies
-
-* [github](https://www.npmjs.com/package/github)
-* [bluebird](https://www.npmjs.com/package/bluebird)
-* [faded-progressbar](https://www.npmjs.com/package/faded-progressbar)
-
 ## To-do
 
 * Option to download repositories at a given path
