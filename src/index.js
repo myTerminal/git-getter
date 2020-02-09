@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-/* global require */
+/* global require process */
 
 const { execSync } = require('child_process');
 const fs = require('fs');
@@ -30,11 +30,13 @@ const {
 // Validate whether a username was supplied
 if (!username) {
     console.log('Please provide the username!');
+    process.exit();
 }
 
 // Validate the supplied directory, if any
 if (!fs.existsSync(targetPath) || !fs.lstatSync(targetPath).isDirectory()) {
     console.log('Please provide a valid path!');
+    process.exit();
 }
 
 const addResults = (link, results, onDone) => {
