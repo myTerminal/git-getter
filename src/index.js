@@ -4,6 +4,7 @@
 
 const { execSync } = require('child_process');
 const fs = require('fs');
+const path = require('path');
 const fadedProgressbar = require('faded-progressbar');
 const GitHubApi = require('github');
 const Promise = require('bluebird');
@@ -62,11 +63,16 @@ const downloadRepos = repos => {
     downloadProcess.start();
 
     sourceRepos.forEach(
-        (r, i) => {
-            const urlToClone = useSSH ? r.ssh_url : r.clone_url;
-
+        (
+            {
+                name,
+                clone_url: cloneUrl,
+                ssh_url: sshUrl
+            },
+            i
+        ) => {
             execSync(
-                `git clone ${urlToClone} ${targetPath}`,
+                `git clone ${useSSH ? sshUrl : cloneUrl} ${path.join(targetPath, name)}`,
                 {
                     stdio: [0, 1, 2]
                 }
