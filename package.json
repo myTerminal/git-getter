@@ -1,6 +1,6 @@
 {
   "name": "git-getter",
-  "version": "0.9.7",
+  "version": "0.10.0",
   "description": "A utility to get all repositories for a specific user/organization",
   "bin": "bin/index.js",
   "scripts": {
@@ -23,7 +23,8 @@
   "dependencies": {
     "bluebird": "3.5.0",
     "faded-progressbar": "0.9.6",
-    "github": "10.0.0"
+    "github": "10.0.0",
+    "yargs": "15.1.0"
   },
   "devDependencies": {
     "babel-core": "6.26.3",

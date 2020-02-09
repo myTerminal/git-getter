@@ -6,6 +6,7 @@ const { execSync } = require('child_process');
 const fadedProgressbar = require('faded-progressbar');
 const GitHubApi = require('github');
 const Promise = require('bluebird');
+const { argv } = require('yargs');
 
 const github = new GitHubApi({
     protocol: 'https',
@@ -19,6 +20,7 @@ const github = new GitHubApi({
 });
 const args = process.argv;
 const username = args[2];
+const useSSH = argv.ssh;
 
 const addResults = (link, results, onDone) => {
     github.getNextPage(
@@ -44,12 +46,15 @@ const downloadRepos = repos => {
 
     sourceRepos.forEach(
         (r, i) => {
+            const urlToClone = useSSH ? r.ssh_url : r.clone_url;
+
             execSync(
-                `git clone ${r.clone_url}`,
+                `git clone ${urlToClone}`,
                 {
                     stdio: [0, 1, 2]
                 }
             );
+
             downloadProcess.updateProgress(i + 1);
         }
     );
