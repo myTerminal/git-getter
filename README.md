@@ -22,16 +22,21 @@ A utility to get all repositories for a specific user/organization
 
 ## How to Use
 
-Run `git-getter` from the command line passing it the name of the user for which you want to download all the repositories.
+Run `git-getter` from the command line and provide the name of the user you want the projects to be cloned from and the directory you want them to be placed in.
+
+    git-getter --username <user> [--targetPath <path>] [--ssh]
+
+The `targetPath` is optional, not supplying which will clone projects to the current directory.
 
 For example, running
 
-    git-getter myTerminal
+    git-getter --username myTerminal --targetPath ~/_repositories
 
-will download all the repositories owned by the user *myTerminal* on GitHub at the current path.
+will download all the repositories owned by the user *myTerminal* on GitHub at *~/_repositories*.
+
+The optional switch `--shh` can be used to clone projects using `ssh`. Note that this needs an SSH key to be present on the system.
 
 ## To-do
 
-* Option to download repositories at a given path
 * Download repositories for an organization
 * Integration with GitLab
