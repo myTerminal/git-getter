@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 
-/* global require process */
+/* global require */
 
 const { execSync } = require('child_process');
+const fs = require('fs');
 const fadedProgressbar = require('faded-progressbar');
 const GitHubApi = require('github');
 const Promise = require('bluebird');
@@ -18,9 +19,23 @@ const github = new GitHubApi({
     followRedirects: false,
     timeout: 5000
 });
-const args = process.argv;
-const username = args[2];
-const useSSH = argv.ssh;
+
+// Extract arguments
+const {
+    username,
+    targetPath = '.',
+    ssh: useSSH
+} = argv;
+
+// Validate whether a username was supplied
+if (!username) {
+    console.log('Please provide the username!');
+}
+
+// Validate the supplied directory, if any
+if (!fs.existsSync(targetPath) || !fs.lstatSync(targetPath).isDirectory()) {
+    console.log('Please provide a valid path!');
+}
 
 const addResults = (link, results, onDone) => {
     github.getNextPage(
@@ -49,7 +64,7 @@ const downloadRepos = repos => {
             const urlToClone = useSSH ? r.ssh_url : r.clone_url;
 
             execSync(
-                `git clone ${urlToClone}`,
+                `git clone ${urlToClone} ${targetPath}`,
                 {
                     stdio: [0, 1, 2]
                 }
