@@ -71,12 +71,18 @@ const downloadRepos = repos => {
             },
             i
         ) => {
-            execSync(
-                `git clone ${useSSH ? sshUrl : cloneUrl} ${path.join(targetPath, name)}`,
-                {
-                    stdio: [0, 1, 2]
-                }
-            );
+            const clonePath = path.join(targetPath, name);
+
+            if (!fs.existsSync(clonePath)) {
+                execSync(
+                    `git clone ${useSSH ? sshUrl : cloneUrl} ${clonePath}`,
+                    {
+                        stdio: [0, 1, 2]
+                    }
+                );
+            } else {
+                console.log('Repository already exists, skipping...');
+            }
 
             downloadProcess.updateProgress(i + 1);
         }
