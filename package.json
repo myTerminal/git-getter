@@ -1,6 +1,6 @@
 {
   "name": "git-getter",
-  "version": "0.10.3",
+  "version": "0.10.4",
   "description": "A utility to get all repositories for a specific user/organization",
   "bin": "bin/index.js",
   "files": [
